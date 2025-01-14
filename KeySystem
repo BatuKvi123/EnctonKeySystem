@@ -34,7 +34,7 @@ else
 print("isKeyless is disabled so user gotta complete the key system manually")
 	end
 	end
-
+	end
 
 -- StarterGui.EnctonKeySystem.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
