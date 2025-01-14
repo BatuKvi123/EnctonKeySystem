@@ -15,6 +15,26 @@ G2L["1"] = Instance.new("ScreenGui", gethui() );
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
+local link = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/main/isKeyless.json"
+local response = http.request({
+	Url = link,
+	Method = "GET"
+})
+if response and response.StatusCode == 200 and response.Body then
+	local HttpService = game:GetService("HttpService")
+	local success, decoded = pcall(function()
+		return HttpService:JSONDecode(response.Body)
+	end)
+	if success then
+		local keyless = decoded.keyless
+		if keyless == true then
+		G2L["1"]:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))()
+else
+print("isKeyless is disabled so user gotta complete the key system manually")
+	end
+	end
+
 
 -- StarterGui.EnctonKeySystem.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -438,26 +458,7 @@ end;
 task.spawn(C_d);
 
 
---CHECK IF KEYLESS
-local link = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/main/isKeyless.json"
-local response = http.request({
-	Url = link,
-	Method = "GET"
-})
-if response and response.StatusCode == 200 and response.Body then
-	local HttpService = game:GetService("HttpService")
-	local success, decoded = pcall(function()
-		return HttpService:JSONDecode(response.Body)
-	end)
-	if success then
-		local keyless = decoded.keyless
-		if keyless == true then
-		G2L["1"]:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))()
-else
-print("isKeyless is disabled so user gotta complete the key system manually")
-	end
-	end
+
 	end
 
 return G2L["1"], require;
