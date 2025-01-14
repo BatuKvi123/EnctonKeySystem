@@ -12,7 +12,6 @@ local G2L = {};
 
 -- StarterGui.EnctonKeySystem
 G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
-G2L["1"]["Enabled"] = false;
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
