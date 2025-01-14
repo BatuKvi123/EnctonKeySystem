@@ -11,7 +11,7 @@
 local G2L = {};
 
 -- StarterGui.EnctonKeySystem
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -745,7 +745,7 @@ local script = G2L["e"];
 	
 	    if success then
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
-			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
+			G2L["1"]:Destroy()
 	    else
 			script.Parent.wrongkey.Visible = true;
 			wait(1);
