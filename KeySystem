@@ -678,7 +678,7 @@ local script = G2L["e"];
 						return true;
 					end
 				else
-					if fStringSub(key, 1, 4) == "KEY_" then
+					if fStringSub(key, 1, 4) == "KEY_" or fStringSub(key, 1, 5) == "FREE_" then
 						return redeemKey(key);
 					else
 						onMessage("key is invalid.");
@@ -745,7 +745,7 @@ local script = G2L["e"];
 	
 	    if success then
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
-			G2L["1"]:Destroy()
+			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
 	    else
 			script.Parent.wrongkey.Visible = true;
 			wait(1);
@@ -753,12 +753,7 @@ local script = G2L["e"];
 	    end
 	end)
 	
-	local flag = getFlag("example_flag");
-	if flag ~= nil then
-	    print("flag value: " .. flag);
-	else
-	    print("failed to get flag.");
-	end
+	verifyKey(getclipboard())
 	
 	-------------------------------------------------------------------------------
 end;
