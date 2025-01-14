@@ -7,11 +7,11 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 14 | Scripts: 2 | Modules: 0 | Tags: 0
+-- Instances: 15 | Scripts: 2 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.EnctonKeySystem
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer.PlayerGui);
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -132,6 +132,23 @@ G2L["d"] = Instance.new("LocalScript", G2L["b"]);
 -- StarterGui.EnctonKeySystem.Main.ButtonLogic
 G2L["e"] = Instance.new("LocalScript", G2L["2"]);
 G2L["e"]["Name"] = [[ButtonLogic]];
+
+
+-- StarterGui.EnctonKeySystem.Main.wrongkey
+G2L["f"] = Instance.new("TextLabel", G2L["2"]);
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextSize"] = 14;
+G2L["f"]["TextScaled"] = true;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["f"]["TextColor3"] = Color3.fromRGB(180, 0, 0);
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Text"] = [[Wrong key!]];
+G2L["f"]["Name"] = [[wrongkey]];
+G2L["f"]["Position"] = UDim2.new(0.0935, 0, 0.89632, 0);
 
 
 -- StarterGui.EnctonKeySystem.Main.CopyKey.LocalScript
@@ -466,7 +483,7 @@ local script = G2L["e"];
 	
 	--! configuration
 	local service = 1230;  -- your service id, this is used to identify your service.
-	local secret = script.Parent.KeyInput.Text;  -- make sure to obfuscate this if you want to ensure security.
+	local secret = "7e94e8c1-5f32-4e32-a9b0-983beb66a52e";  -- make sure to obfuscate this if you want to ensure security.
 	local useNonce = false;  -- use a nonce to prevent replay attacks and request tampering.
 	
 	--! callbacks
@@ -555,8 +572,7 @@ local script = G2L["e"];
 	--!optimize 2
 	local copyLink = function()
 		local success, link = cacheLink();
-		fSetClipboard(link);
-		setclipboard(link)
+	
 		if success then
 			fSetClipboard(link);
 		end
@@ -661,7 +677,7 @@ local script = G2L["e"];
 						return true;
 					end
 				else
-					if fStringSub(key, 1, 4) == "FREE_" then
+					if fStringSub(key, 1, 4) == "KEY_" then
 						return redeemKey(key);
 					else
 						onMessage("key is invalid.");
@@ -717,32 +733,6 @@ local script = G2L["e"];
 			return nil;
 		end
 	end
-	-------------------------------------------------------------------------------
-	
-	-------------------------------------------------------------------------------
-	--! platoboost usage documentation
-	-- copyLink() -> string
-	-- verifyKey(key: string) -> boolean
-	-- getFlag(name: string) -> boolean, string | boolean | number
-	
-	-- use copyLink() to copy a link to the clipboard, in which the user will paste it into their browser and complete the keysystem.
-	-- use verifyKey(key) to verify a key, this will return a boolean value, true means the key was valid, false means it is invalid.
-	-- use getFlag(name) to get a flag from the server, this will return nil if an error occurs, if no error occurs, the value configured in the platoboost dashboard will be returned.
-	
-	-- IMPORTANT: onMessage is a callback, it will be called upon status update, use it to provide information to user.
-	-- EXAMPLE: 
-	--[[
-	onMessage = function(message)
-	    game:GetService("StarterGui"):SetCore("SendNotification", {
-	        Title = "Platoboost status",
-	        Text = message
-	    })
-	end
-	]]--
-	
-	-- NOTE: PLACE THIS ENTIRE SCRIPT AT THE TOP OF YOUR SCRIPT, ADD THE LOGIC, THEN OBFUSCATE YOUR SCRIPT.
-	
-	--! example usage
 	
 	script.Parent.CopyKey.MouseButton1Click:Connect(function()
 	    copyLink();
@@ -753,14 +743,22 @@ local script = G2L["e"];
 	    local success = verifyKey(key);
 	
 	    if success then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))();
-			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy();
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
+			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
 	    else
-			script.Parent.Check.Text = "Wrong Key!";
-			wait(1)
-			script.Parent.Check.Text = "Check";
+			script.Parent.wrongkey.Visible = true;
+			wait(1);
+			script.Parent.wrongkey.Visible = false;
 	    end
 	end)
+	
+	local flag = getFlag("example_flag");
+	if flag ~= nil then
+	    print("flag value: " .. flag);
+	else
+	    print("failed to get flag.");
+	end
+	
 	-------------------------------------------------------------------------------
 end;
 task.spawn(C_e);
