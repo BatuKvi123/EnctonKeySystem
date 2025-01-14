@@ -11,7 +11,7 @@
 local G2L = {};
 
 -- StarterGui.EnctonKeySystem
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui") or gethui());
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -21,7 +21,7 @@ G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
 G2L["2"]["Size"] = UDim2.new(0, 246, 0, 299);
-G2L["2"]["Position"] = UDim2.new(0.4189, 0, 0.22775, 0);
+G2L["2"]["Position"] = UDim2.new(0.3751, 0, 0.08866, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Main]];
 
