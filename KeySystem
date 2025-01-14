@@ -28,13 +28,14 @@ if response and response.StatusCode == 200 and response.Body then
 	if success then
 		local keyless = decoded.keyless
 		if keyless == true then
-		G2L["1"]:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))()
-else
-print("isKeyless is disabled so user gotta complete the key system manually")
+			G2L["1"]:Destroy()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))()
+		else
+			print("isKeyless is disabled so user gotta complete the key system manually")
+		end
 	end
-	end
-	end
+end
+
 
 -- StarterGui.EnctonKeySystem.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -443,7 +444,7 @@ local script = G2L["d"];
 	
 	    if success then
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
-			G2L["1"]:Destroy()
+			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
 	    else
 			script.Parent.wrongkey.Visible = true;
 			wait(1);
@@ -456,7 +457,5 @@ local script = G2L["d"];
 	-------------------------------------------------------------------------------
 end;
 task.spawn(C_d);
-
-end
 
 return G2L["1"], require;
