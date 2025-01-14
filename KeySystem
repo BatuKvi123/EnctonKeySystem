@@ -753,8 +753,8 @@ local script = G2L["e"];
 	    local success = verifyKey(key);
 	
 	    if success then
-			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))();
+			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy();
 	    else
 			script.Parent.Check.Text = "Wrong Key!";
 			wait(1)
