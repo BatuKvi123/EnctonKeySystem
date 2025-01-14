@@ -11,7 +11,7 @@ if response and response.StatusCode == 200 and response.Body then
 	if success then
 		local keyless = decoded.keyless
 		if keyless == true then
-		G2L["1"]Destroy()
+		G2L["1"]:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource"))()
 else
 print("isKeyless is disabled so user gotta complete the key system manually")
