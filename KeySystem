@@ -768,7 +768,7 @@ local script = G2L["e"];
 	
 	    if success then
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
-			game.Players.LocalPlayer.PlayerGui.EnctonKeySystem:Destroy()
+			game:GetService('CoreGui').EnctonKeySystem:Destroy()
 	    else
 			script.Parent.wrongkey.Visible = true;
 			wait(1);
