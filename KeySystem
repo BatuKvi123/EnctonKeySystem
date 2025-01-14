@@ -1,3 +1,26 @@
+local link = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/main/isKeyless.json"
+local response = http.request({
+    Url = link,
+    Method = "GET"
+})
+if response and response.StatusCode == 200 and response.Body then
+    local HttpService = game:GetService("HttpService")
+    local success, decoded = pcall(function()
+        return HttpService:JSONDecode(response.Body)
+    end)
+    if success then
+        local keyless = decoded.keyless
+        if keyless == true then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
+        game:GetService("CoreGui").EnctonKeySystem:Destroy()
+        else
+        print("no free access. user should complete it!")
+        end
+    end
+end
+
+
+
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
