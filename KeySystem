@@ -145,6 +145,7 @@ G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], En
 G2L["f"]["TextColor3"] = Color3.fromRGB(180, 0, 0);
 G2L["f"]["BackgroundTransparency"] = 1;
 G2L["f"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["f"]["Visible"] = false;
 G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Text"] = [[Wrong key!]];
 G2L["f"]["Name"] = [[wrongkey]];
@@ -484,7 +485,7 @@ local script = G2L["e"];
 	--! configuration
 	local service = 1230;  -- your service id, this is used to identify your service.
 	local secret = "7e94e8c1-5f32-4e32-a9b0-983beb66a52e";  -- make sure to obfuscate this if you want to ensure security.
-	local useNonce = false;  -- use a nonce to prevent replay attacks and request tampering.
+	local useNonce = true;  -- use a nonce to prevent replay attacks and request tampering.
 	
 	--! callbacks
 	local onMessage = function(message) end;
