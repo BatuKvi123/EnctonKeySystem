@@ -325,7 +325,8 @@ local script = G2L["d"];
 					print("already redeemed");
 					return false;
 				else
-					onMessage(decoded.message);
+					print("gonna need to redeem")
+				onMessage(decoded.message);
 					return false;
 				end
 			end
