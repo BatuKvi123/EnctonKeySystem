@@ -322,7 +322,7 @@ local script = G2L["d"];
 				end
 			else
 				if fStringSub(decoded.message, 1, 27) == "unique constraint violation" then
-					onMessage("you already have an active key, please wait for it to expire before redeeming it.");
+					print("already redeemed");
 					return false;
 				else
 					onMessage(decoded.message);
