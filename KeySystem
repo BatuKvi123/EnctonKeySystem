@@ -187,7 +187,9 @@ local script = G2L["d"];
 	local useNonce = true;  -- use a nonce to prevent replay attacks and request tampering.
 	
 	--! callbacks
-	local onMessage = function(message) end;
+	local onMessage = function(message) 
+print(message)
+end;
 	
 	--! wait for game to load
 	repeat task.wait(1) until game:IsLoaded();
