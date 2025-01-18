@@ -21,7 +21,7 @@ G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
 G2L["2"]["Size"] = UDim2.new(0, 246, 0, 299);
-G2L["2"]["Position"] = UDim2.new(0.3751, 0, 0.08866, 0);
+G2L["2"]["Position"] = UDim2.new(0.40326, 0, 0.23992, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Main]];
 
@@ -174,7 +174,9 @@ local script = G2L["d"];
 	local useNonce = true;  -- use a nonce to prevent replay attacks and request tampering.
 	
 	--! callbacks
-	local onMessage = function(message) end;
+	local onMessage = function(message) 
+		print(message)
+	end;
 	
 	--! wait for game to load
 	repeat task.wait(1) until game:IsLoaded();
@@ -422,6 +424,8 @@ local script = G2L["d"];
 		end
 	end
 	
+	verifyKey(readfile("EnctonWorkspace/EnctonKeyInput.lua"))
+	
 	script.Parent.CopyKey.MouseButton1Click:Connect(function()
 	    copyLink();
 	end)
@@ -448,7 +452,7 @@ local script = G2L["d"];
 		writefile("EnctonWorkspace/EnctonKeyInput", keyinput_text.Text)
 	end)
 	
-	verifyKey(readfile("EnctonWorkspace/EnctonKeyInput"))
+	verifyKey(readfile("EnctonWorkspace/EnctonKeyInput.lua"))
 	
 	-------------------------------------------------------------------------------
 end;
