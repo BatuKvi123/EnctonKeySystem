@@ -191,7 +191,8 @@ local script = G2L["d"];
 	local key = script.Parent.KeyInput.Text
 	
 	script.Parent.CopyKey.MouseButton1Click:Connect(function()
-	local getkey = KeyGuardLibrary.getLink()
+	setclipboard(KeyGuardLibrary.getLink())
+print(KeyGuardLibrary.getLink())
 	end)
 	
 	script.Parent.Check.MouseButton1Click:Connect(function()
