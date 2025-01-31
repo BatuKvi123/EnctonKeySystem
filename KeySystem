@@ -1,6 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/RequiredFile_FolderCreator"))()
 
--- Instances: 14 | Scripts: 1 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.EnctonKeySystem
@@ -8,39 +7,38 @@ G2L["1"] = Instance.new("ScreenGui", gethui() );
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Check if keyless
 local githubURL = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/refs/heads/main/isKeyless.json"
 
 local response
 if syn and syn.request then
-    response = syn.request({
-        Url = githubURL,
-        Method = "GET"
-    })
+	response = syn.request({
+		Url = githubURL,
+		Method = "GET"
+	})
 elseif http and http.request then
-    response = http.request({
-        Url = githubURL,
-        Method = "GET"
-    })
+	response = http.request({
+		Url = githubURL,
+		Method = "GET"
+	})
 elseif fluxus and fluxus.request then
-    response = fluxus.request({
-        Url = githubURL,
-        Method = "GET"
-    })
+	response = fluxus.request({
+		Url = githubURL,
+		Method = "GET"
+	})
 else
-    print("http requsnt doesnt supported")
+	print("http requsnt doesnt supported")
 end
 
 if response and response.StatusCode == 200 then
-    local data = game:GetService("HttpService"):JSONDecode(response.Body)
-    if data.keyless then
-       G2L["1"]:Destroy()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
-    else
-        print("no keyless")
-    end
+	local data = game:GetService("HttpService"):JSONDecode(response.Body)
+	if data.keyless then
+		G2L["1"]:Destroy()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
+	else
+		print("no keyless")
+	end
 else
-    print("fail")
+	print("fail")
 end
 
 
@@ -179,48 +177,41 @@ G2L["e"]["Position"] = UDim2.new(0.0935, 0, 0.89632, 0);
 -- StarterGui.EnctonKeySystem.Main.ButtonLogic
 local function C_d()
 local script = G2L["d"];
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/RequiredFile_FolderCreator"))()
+	local KeyGuardLibrary = loadstring(game:HttpGet("https://cdn.keyguardian.org/library/v1.0.0.lua"))()
+	local trueData = "dfa1cfaaaeb447288b32f1083b61568a"
+	local falseData = "0a001a260bf44c7fa1b04a36c9c7a76a"
+	
+	KeyGuardLibrary.Set({
+		publicToken = "703ed6bd5c9e455c93500080d697bcd0",
+		privateToken = "79dc2a4917f346fdabfa990f1b4032e0",
+		trueData = trueData,
+		falseData = falseData,
+	})
+	
+	local key = script.Parent.KeyInput.Text
+	
+	script.Parent.CopyKey.MouseButton1Click:Connect(function()
+	local getkey = KeyGuardLibrary.getLink()
+	end)
+	
+	script.Parent.Check.MouseButton1Click:Connect(function()
+		local response = KeyGuardLibrary.validateDefaultKey(key)
+		if response == trueData then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
+			G2L["1"]:Destroy()
+		else
+			script.Parent.wrongkey.Visible = true
+			wait(2)
+			script.Parent.wrongkey.Visible = false
+		end
+	end)
 	
 	--[[
-	if not isfile("EnctonWorkspace/EnctonKeyInput") then
-		writefile("EnctonWorkspace/EnctonKeyInput", "")
-	end
-	--]]
-	-- KEY SYSTEM
-	local KeyGuardLibrary = loadstring(game:HttpGet("https://cdn.keyguardian.org/library/v1.0.0.lua"))()
-local trueData = "dfa1cfaaaeb447288b32f1083b61568a"
-local falseData = "0a001a260bf44c7fa1b04a36c9c7a76a"
-
-KeyGuardLibrary.Set({
-  publicToken = "703ed6bd5c9e455c93500080d697bcd0",
-  privateToken = "79dc2a4917f346fdabfa990f1b4032e0",
-  trueData = trueData,
-  falseData = falseData,
-})
-
-local key = script.Parent.KeyInput.Text
-
---copy key
-script.Parent.CopyKey.MouseButton1Click:Connect(function()
-setclipboard(KeyGuardLibrary.getLink())
-end)
-
-script.Parent.Check.MouseButton1Click:Connect(function()
-KeyGuardLibrary.validateDefaultKey(key)
-end)
-
-if response == trueData then
-  print("Key is valid")
-else
-  print("Key is invalid")
-end
-
---[[
-  KeyGuardLibrary.validateDefaultKey(key) - Validate key
-  KeyGuardLibrary.validatePremiumKey(key) - Validate premium key
-  KeyGuardLibrary.getService() - Get service
-  KeyGuardLibrary.getLink() - Get link
-]]
+	  KeyGuardLibrary.validateDefaultKey(key) - Validate key
+	  KeyGuardLibrary.validatePremiumKey(key) - Validate premium key
+	  KeyGuardLibrary.getService() - Get service
+	  KeyGuardLibrary.getLink() - Get link
+	]]
 end;
 task.spawn(C_d);
 
