@@ -1,5 +1,6 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/RequiredFile_FolderCreator"))()
 
+
 local G2L = {};
 
 -- StarterGui.EnctonKeySystem
@@ -7,38 +8,39 @@ G2L["1"] = Instance.new("ScreenGui", gethui() );
 G2L["1"]["Name"] = [[EnctonKeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
+--Check if keyless
 local githubURL = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/refs/heads/main/isKeyless.json"
 
 local response
 if syn and syn.request then
-	response = syn.request({
-		Url = githubURL,
-		Method = "GET"
-	})
+    response = syn.request({
+        Url = githubURL,
+        Method = "GET"
+    })
 elseif http and http.request then
-	response = http.request({
-		Url = githubURL,
-		Method = "GET"
-	})
+    response = http.request({
+        Url = githubURL,
+        Method = "GET"
+    })
 elseif fluxus and fluxus.request then
-	response = fluxus.request({
-		Url = githubURL,
-		Method = "GET"
-	})
+    response = fluxus.request({
+        Url = githubURL,
+        Method = "GET"
+    })
 else
-	print("http requsnt doesnt supported")
+    print("http requsnt doesnt supported")
 end
 
 if response and response.StatusCode == 200 then
-	local data = game:GetService("HttpService"):JSONDecode(response.Body)
-	if data.keyless then
-		G2L["1"]:Destroy()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
-	else
-		print("no keyless")
-	end
+    local data = game:GetService("HttpService"):JSONDecode(response.Body)
+    if data.keyless then
+       G2L["1"]:Destroy()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
+    else
+        print("no keyless")
+    end
 else
-	print("fail")
+    print("fail")
 end
 
 
@@ -178,8 +180,8 @@ G2L["e"]["Position"] = UDim2.new(0.0935, 0, 0.89632, 0);
 local function C_d()
 local script = G2L["d"];
 	local KeyGuardLibrary = loadstring(game:HttpGet("https://cdn.keyguardian.org/library/v1.0.0.lua"))()
-	local trueData = "dfa1cfaaaeb447288b32f1083b61568a"
-	local falseData = "0a001a260bf44c7fa1b04a36c9c7a76a"
+	local trueData = "a9ffc50d128f46afbbad2d521d136006"
+	local falseData = "4d26ed71275344abad1ae43371933420"
 	
 	KeyGuardLibrary.Set({
 		publicToken = "703ed6bd5c9e455c93500080d697bcd0",
@@ -188,24 +190,27 @@ local script = G2L["d"];
 		falseData = falseData,
 	})
 	
-	local key = script.Parent.KeyInput.Text
+	local key = script.Parent.KeyInput
 	
 	script.Parent.CopyKey.MouseButton1Click:Connect(function()
-	setclipboard(KeyGuardLibrary.getLink())
-print(KeyGuardLibrary.getLink())
-	end)
+	local getkey = KeyGuardLibrary.getLink()
+		print(getkey)
+		setclipboard(getkey)
+		end)
 	
 	script.Parent.Check.MouseButton1Click:Connect(function()
-		local response = KeyGuardLibrary.validateDefaultKey(key)
-		if response == trueData then
-			loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))();
-			G2L["1"]:Destroy()
-		else
-			script.Parent.wrongkey.Visible = true
-			wait(2)
-			script.Parent.wrongkey.Visible = false
+	local response = KeyGuardLibrary.validateDefaultKey(key.Text)
+	print(response)
+	
+	if response == trueData then
+		G2L["1"]:Destroy()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonSource'))()
+	else
+		script.Parent.wrongkey.Visible = true
+		wait(2)
+		script.Parent.wrongkey.Visible = false
 		end
-	end)
+		end)
 	
 	--[[
 	  KeyGuardLibrary.validateDefaultKey(key) - Validate key
