@@ -319,7 +319,7 @@ local script = G2L["10"];
 	
 	
 	
-	local KeyGuardLibrary = local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
+	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
 	local trueData = "a9ffc50d128f46afbbad2d521d136006"
 	local falseData = "4d26ed71275344abad1ae43371933420"
 	
