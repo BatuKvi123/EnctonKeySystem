@@ -320,12 +320,12 @@ local script = G2L["10"];
 	
 	
 	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
-	local trueData = "a9ffc50d128f46afbbad2d521d136006"
-	local falseData = "4d26ed71275344abad1ae43371933420"
+        local trueData = "729b2d0813534812951c1ead7ee7e10a",
+        local falseData = "a9051db43f4e452fa47e4c81a0727cb6",
 	
 	KeyGuardLibrary.Set({
-		publicToken = "703ed6bd5c9e455c93500080d697bcd0",
-		privateToken = "79dc2a4917f346fdabfa990f1b4032e0",
+               publicToken = "e423a2fdba5842a68919e6f8fb714064",
+               privateToken = "930ecef53c674a3bb5bca1576577716f",
 		trueData = trueData,
 		falseData = falseData,
 	})
