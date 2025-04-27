@@ -8,6 +8,42 @@ G2L["1"] = Instance.new("ScreenGui", gethui());
 G2L["1"]["Name"] = [[EnctonKeySystemV1.3.0]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
+-- Check if keyless.
+local link = "https://raw.githubusercontent.com/BatuKvi123/EnctonKeySystem/refs/heads/main/isKeyless.json"
+local response = http.request({
+    Url = link,
+    Method = "GET"
+})
+
+if response then
+    if response.StatusCode == 200 and response.Body then
+        local HttpService = game:GetService("HttpService")
+        local success, decoded = pcall(function()
+            return HttpService:JSONDecode(response.Body)
+        end)
+
+        if success then
+            local keyless = decoded.keyless
+            if keyless == true then
+                G2L["1"]:Destroy()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
+            else
+                return false
+            end
+        else
+	print("error: " .. decoded)
+return false
+        end
+    else
+        print("error: " .. response.StatusCode)
+return false
+    end
+else
+    print("Failed to make HTTP request.")
+return false
+end
+
+
 
 -- StarterGui.EnctonKeySystemV1.3.0.Main
 G2L["2"] = Instance.new("Frame", G2L["1"]);
