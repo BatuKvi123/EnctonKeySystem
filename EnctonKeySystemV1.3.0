@@ -31,19 +31,16 @@ if response then
                 G2L["1"]:Destroy()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
             else
-                return false
+
             end
         else
 	print("error: " .. decoded)
-return false
         end
     else
         print("error: " .. response.StatusCode)
-return false
     end
 else
     print("Failed to make HTTP request.")
-return false
 end
 
 
