@@ -369,27 +369,22 @@ local script = G2L["17"];
 	
 	local getkey = KeyGuardLibrary.getLink()
 	
-	local function loadEncton()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0'))()
-	end
-	
-	
 	local freecontent = isfile("EnctonWorkspace/EnctonKeyInput.lua") and readfile("EnctonWorkspace/EnctonKeyInput.lua") or ""
 	local premiumcontent = isfile("EnctonWorkspace/EnctonKeyInputPremium.lua") and readfile("EnctonWorkspace/EnctonKeyInputPremium.lua") or ""
 	
 	local response = KeyGuardLibrary.validateDefaultKey(freecontent)
 	
 	if response == trueData then
-		script.Parent.Parent.Main.Parent:Destroy()
-		loadEncton()
+		G2L["1"]:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
 	else
 		DescLabel.Text = "AUTO CHECK: Freemium Key Is Invalid! Trying Premium..."
 		wait(1)
 		local response2 = KeyGuardLibrary.validatePremiumKey(premiumcontent)
 	
 		if response2 == trueData then
-			script.Parent.Parent.Main.Parent:Destroy()
-			loadEncton()
+			G2L["1"]:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
 		else
 			DescLabel.Text = "AUTO CHECK: Both keys are invalid!"
 			wait(2)
@@ -406,8 +401,8 @@ local script = G2L["17"];
 		local response = KeyGuardLibrary.validateDefaultKey(enteredKey)
 	
 		if response == trueData then
-			script.Parent.Parent.Main.Parent:Destroy()
-			loadEncton()
+			G2L["1"]:Destroy()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
 		else
 			DescLabel.Text = "Freemium Key Is Invalid! Trying Premium..."
 			wait(1)
@@ -416,8 +411,8 @@ local script = G2L["17"];
 			local response2 = KeyGuardLibrary.validatePremiumKey(premiumKey)
 	
 			if response2 == trueData then
-				script.Parent.Parent.Main.Parent:Destroy()
-				loadEncton()
+				G2L["1"]:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
 			else
 				DescLabel.Text = "Both keys are invalid!"
 				wait(2)
