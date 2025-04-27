@@ -1,0 +1,401 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 26 | Scripts: 5 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.EnctonKeySystemV1.3.0
+G2L["1"] = Instance.new("ScreenGui", gethui());
+G2L["1"]["Name"] = [[EnctonKeySystemV1.3.0]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["2"]["Size"] = UDim2.new(0, 394, 0, 273);
+G2L["2"]["Position"] = UDim2.new(0.33762, 0, 0.26252, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Main]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.enctonlogo
+G2L["3"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Image"] = [[rbxassetid://103120062352398]];
+G2L["3"]["Size"] = UDim2.new(0, 53, 0, 49);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["BackgroundTransparency"] = 1;
+G2L["3"]["Name"] = [[enctonlogo]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.title
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["TextWrapped"] = true;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 14;
+G2L["4"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4"]["TextScaled"] = true;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundTransparency"] = 1;
+G2L["4"]["Size"] = UDim2.new(0, 192, 0, 18);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[Encton Key System]];
+G2L["4"]["Name"] = [[title]];
+G2L["4"]["Position"] = UDim2.new(0.14975, 0, 0.05495, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["2"]);
+
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.FreemiumKEY
+G2L["6"] = Instance.new("TextBox", G2L["2"]);
+G2L["6"]["CursorPosition"] = -1;
+G2L["6"]["Name"] = [[FreemiumKEY]];
+G2L["6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["6"]["PlaceholderText"] = [[Freemium]];
+G2L["6"]["Size"] = UDim2.new(0, 314, 0, 29);
+G2L["6"]["Position"] = UDim2.new(0.09645, 0, 0.30037, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.FreemiumKEY.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.FreemiumKEY.UIPadding
+G2L["8"] = Instance.new("UIPadding", G2L["6"]);
+G2L["8"]["PaddingLeft"] = UDim.new(0, 10);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.FreemiumKEY.LocalScript
+G2L["9"] = Instance.new("LocalScript", G2L["6"]);
+
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.desc
+G2L["a"] = Instance.new("TextLabel", G2L["2"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextScaled"] = true;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Size"] = UDim2.new(0, 394, 0, 18);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[In order to continue using encton, please complete the key system.]];
+G2L["a"]["Name"] = [[desc]];
+G2L["a"]["Position"] = UDim2.new(0, 0, 0.17949, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.PremiumKEY
+G2L["b"] = Instance.new("TextBox", G2L["2"]);
+G2L["b"]["CursorPosition"] = -1;
+G2L["b"]["Name"] = [[PremiumKEY]];
+G2L["b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(137, 139, 0);
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["b"]["PlaceholderText"] = [[Premium]];
+G2L["b"]["Size"] = UDim2.new(0, 314, 0, 29);
+G2L["b"]["Position"] = UDim2.new(0.09645, 0, 0.48352, 0);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.PremiumKEY.UICorner
+G2L["c"] = Instance.new("UICorner", G2L["b"]);
+G2L["c"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.PremiumKEY.UIPadding
+G2L["d"] = Instance.new("UIPadding", G2L["b"]);
+G2L["d"]["PaddingLeft"] = UDim.new(0, 10);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.PremiumKEY.LocalScript
+G2L["e"] = Instance.new("LocalScript", G2L["b"]);
+
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.ValidateFreemium
+G2L["f"] = Instance.new("TextButton", G2L["2"]);
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextSize"] = 15;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["f"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["f"]["Name"] = [[ValidateFreemium]];
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Text"] = [[Validate Freemium]];
+G2L["f"]["Position"] = UDim2.new(0.09645, 0, 0.74359, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.ValidateFreemium.UICorner
+G2L["10"] = Instance.new("UICorner", G2L["f"]);
+G2L["10"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.ValidatePremium
+G2L["11"] = Instance.new("TextButton", G2L["2"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["TextSize"] = 15;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(137, 139, 0);
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["11"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["11"]["Name"] = [[ValidatePremium]];
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Validate Premium]];
+G2L["11"]["Position"] = UDim2.new(0.54569, 0, 0.74359, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.ValidatePremium.UICorner
+G2L["12"] = Instance.new("UICorner", G2L["11"]);
+G2L["12"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.playnormal
+G2L["13"] = Instance.new("TextButton", G2L["2"]);
+G2L["13"]["TextWrapped"] = true;
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["TextSize"] = 15;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["13"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["13"]["Name"] = [[playnormal]];
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[I'll play normal.]];
+G2L["13"]["Position"] = UDim2.new(0.3198, 0, 0.6337, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.playnormal.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+G2L["14"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.playnormal.LocalScript
+G2L["15"] = Instance.new("LocalScript", G2L["13"]);
+
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.Drag
+G2L["16"] = Instance.new("LocalScript", G2L["2"]);
+G2L["16"]["Name"] = [[Drag]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.KeyLogic
+G2L["17"] = Instance.new("LocalScript", G2L["2"]);
+G2L["17"]["Name"] = [[KeyLogic]];
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.CopyKEYLink
+G2L["18"] = Instance.new("TextButton", G2L["2"]);
+G2L["18"]["TextWrapped"] = true;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["TextSize"] = 15;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(62, 62, 62);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["18"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["18"]["Name"] = [[CopyKEYLink]];
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Copy Key Link]];
+G2L["18"]["Position"] = UDim2.new(0.3198, 0, 0.85714, 0);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.CopyKEYLink.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["18"]);
+G2L["19"]["CornerRadius"] = UDim.new(9, 9);
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.Header0
+G2L["1a"] = Instance.new("Frame", G2L["2"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["Size"] = UDim2.new(0, 375, 0, 3);
+G2L["1a"]["Position"] = UDim2.new(0.02284, 0, 0.14652, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Name"] = [[Header0]];
+G2L["1a"]["BackgroundTransparency"] = 0.8;
+
+
+-- StarterGui.EnctonKeySystemV1.3.0.Main.FreemiumKEY.LocalScript
+local function C_9()
+local script = G2L["9"];
+	script.Parent:GetPropertyChangedSignal("Text"):Connect(function()
+		if isfile("EnctonWorkspace/EnctonKeyInput.lua") then
+			writefile("EnctonWorkspace/EnctonKeyInput.lua", script.Parent.Text)
+		end
+	end)
+end;
+task.spawn(C_9);
+-- StarterGui.EnctonKeySystemV1.3.0.Main.PremiumKEY.LocalScript
+local function C_e()
+local script = G2L["e"];
+	script.Parent:GetPropertyChangedSignal("Text"):Connect(function()
+		if isfile("EnctonWorkspace/EnctonKeyInputPremium.lua") then
+			writefile("EnctonWorkspace/EnctonKeyInputPremium.lua", script.Parent.Text)
+		end
+	end)
+end;
+task.spawn(C_e);
+-- StarterGui.EnctonKeySystemV1.3.0.Main.playnormal.LocalScript
+local function C_15()
+local script = G2L["15"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Main:Destroy()
+	end)
+end;
+task.spawn(C_15);
+-- StarterGui.EnctonKeySystemV1.3.0.Main.Drag
+local function C_16()
+local script = G2L["16"];
+	local TweenService = game:GetService("TweenService")
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end;
+task.spawn(C_16);
+-- StarterGui.EnctonKeySystemV1.3.0.Main.KeyLogic
+local function C_17()
+local script = G2L["17"];
+	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
+	
+	local trueData = "729b2d0813534812951c1ead7ee7e10a"
+	local falseData = "a9051db43f4e452fa47e4c81a0727cb6"
+	
+	KeyGuardLibrary.Set({
+		publicToken = "e423a2fdba5842a68919e6f8fb714064",
+		privateToken = "930ecef53c674a3bb5bca1576577716f",
+		trueData = trueData,
+		falseData = falseData,
+	})
+	
+	local TextBoxKeyInput = script.Parent.FreemiumKEY
+	local PremiumBoxKeyInput = script.Parent.PremiumKEY
+	local CopyKeyButton = script.Parent.CopyKEYLink
+	local ValidateKeyButton = script.Parent.ValidateFreemium
+	local DescLabel = script.Parent.desc
+	
+	local getkey = KeyGuardLibrary.getLink()
+	
+	local function loadEncton()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0'))()
+	end
+	
+	
+	local freecontent = isfile("EnctonWorkspace/EnctonKeyInput.lua") and readfile("EnctonWorkspace/EnctonKeyInput.lua") or ""
+	local premiumcontent = isfile("EnctonWorkspace/EnctonKeyInputPremium.lua") and readfile("EnctonWorkspace/EnctonKeyInputPremium.lua") or ""
+	
+	local response = KeyGuardLibrary.validateDefaultKey(freecontent)
+	
+	if response == trueData then
+		script.Parent.Parent.Main.Parent:Destroy()
+		loadEncton()
+	else
+		DescLabel.Text = "AUTO CHECK: Freemium Key Is Invalid! Trying Premium..."
+		wait(1)
+		local response2 = KeyGuardLibrary.validatePremiumKey(premiumcontent)
+	
+		if response2 == trueData then
+			script.Parent.Parent.Main.Parent:Destroy()
+			loadEncton()
+		else
+			DescLabel.Text = "AUTO CHECK: Both keys are invalid!"
+			wait(2)
+			DescLabel.Text = "In order to continue using Encton, please complete the key system."
+		end
+	end
+	
+	CopyKeyButton.MouseButton1Click:Connect(function()
+		setclipboard(getkey)
+	end)
+	
+	ValidateKeyButton.MouseButton1Click:Connect(function()
+		local enteredKey = TextBoxKeyInput.Text
+		local response = KeyGuardLibrary.validateDefaultKey(enteredKey)
+	
+		if response == trueData then
+			script.Parent.Parent.Main.Parent:Destroy()
+			loadEncton()
+		else
+			DescLabel.Text = "Freemium Key Is Invalid! Trying Premium..."
+			wait(1)
+	
+			local premiumKey = PremiumBoxKeyInput.Text
+			local response2 = KeyGuardLibrary.validatePremiumKey(premiumKey)
+	
+			if response2 == trueData then
+				script.Parent.Parent.Main.Parent:Destroy()
+				loadEncton()
+			else
+				DescLabel.Text = "Both keys are invalid!"
+				wait(2)
+				DescLabel.Text = "In order to continue using Encton, please complete the key system."
+			end
+		end
+	end)
+	
+end;
+task.spawn(C_17);
+
+return G2L["1"], require;
