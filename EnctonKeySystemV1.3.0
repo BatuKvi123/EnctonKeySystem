@@ -395,29 +395,19 @@ local script = G2L["17"];
 	end)
 	
 	ValidateKeyButton.MouseButton1Click:Connect(function()
-		local enteredKey = TextBoxKeyInput.Text
-		local response = KeyGuardLibrary.validateDefaultKey(enteredKey)
-	
-		if response == trueData then
-			G2L["1"]:Destroy()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
-		else
-			DescLabel.Text = "Freemium Key Is Invalid! Trying Premium..."
-			wait(1)
-	
-			local premiumKey = PremiumBoxKeyInput.Text
-			local response2 = KeyGuardLibrary.validatePremiumKey(premiumKey)
-	
-			if response2 == trueData then
-				G2L["1"]:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
-			else
-				DescLabel.Text = "Both keys are invalid!"
-				wait(2)
-				DescLabel.Text = "In order to continue using Encton, please complete the key system."
-			end
-		end
-	end)
+ local enteredKey = TextBoxKeyInput.Text
+ local response = KeyGuardLibrary.validateDefaultKey(enteredKey)
+
+ if response == trueData then
+  G2L["1"]:Destroy()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/Encton/refs/heads/main/EnctonV1.3.0"))()
+ else
+  DescLabel.Text = "Freemium Key Is Invalid!"
+  wait(2)
+  DescLabel.Text = "In order to continue using Encton, please complete the key system."
+ end
+end)
+
 	
 end;
 task.spawn(C_17);
