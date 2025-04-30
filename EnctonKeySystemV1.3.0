@@ -53,6 +53,7 @@ G2L["2"]["Size"] = UDim2.new(0, 394, 0, 273);
 G2L["2"]["Position"] = UDim2.new(0.33762, 0, 0.26252, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Main]];
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 
 
 -- StarterGui.EnctonKeySystemV1.3.0.Main.enctonlogo
